@@ -1,14 +1,16 @@
 import axios from "axios";
 
-export const fetchMissions = () => {
+const fetchMissions = () => {
   return axios
     .get("https://api.spacexdata.com/v3/missions")
-    .then(res => {
+    .then((res) => {
       console.log(res);
       return res;
     })
-    .catch(err => {
+    .catch((err) => {
       console.error("error fetching data from api, err: ", err.message);
       throw err;
     });
 };
+
+export default fetchMissions;

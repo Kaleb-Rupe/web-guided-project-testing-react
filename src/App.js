@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import { fetchMissions } from "./api/fetchMissions";
+import fetchMissions from "./api/fetchMissions";
 
 import MissionForm from "./components/MissionForm";
 import MissionsList from "./components/MissionsList";
@@ -13,11 +13,11 @@ export default function App() {
   const getData = () => {
     setIsFetchingData(true);
     fetchMissions()
-      .then(res => {
+      .then((res) => {
         setIsFetchingData(false);
         setMissions(res.data);
       })
-      .catch(err => {
+      .catch((err) => {
         setIsFetchingData(false);
         setError(err.message);
       });
